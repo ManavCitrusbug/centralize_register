@@ -69,5 +69,16 @@ class User(AbstractUser):
         verbose_name_plural = "Users"
     def __str__(self):
         return self.email
+
+class Customer(models.Model):
+    cust_id=models.CharField(max_length=50)
+    name=models.CharField(max_length=50)
+    phone=models.CharField(max_length=10)
+    email=models.EmailField(max_length=50)
+    balance=models.IntegerField(max_length=10)
+    description=models.CharField(max_length=300)
+    ref=models.CharField(max_length=40, blank=True, null=True,unique=True)
+    def __str__(self):
+        return self.cust_id
         
    

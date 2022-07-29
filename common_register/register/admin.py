@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
-from register.models import User 
+from register.models import * 
 
 class UserAdmin(BaseUserAdmin):
     
@@ -29,3 +29,6 @@ class UserAdmin(BaseUserAdmin):
     filter_horizontal = ()
 
 admin.site.register(User, UserAdmin)
+@admin.register(Customer)
+class Customerinfo(admin.ModelAdmin):
+        list_display=['id','cust_id','name','phone','email','balance','description']

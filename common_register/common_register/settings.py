@@ -15,6 +15,7 @@ from pathlib import Path
 import environ
 import os
 import sys
+from decouple import config
 from os import path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -154,4 +155,6 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
 ]
+STRIPE_SECRET_KEY = config('STRIPE_SECRET_KEY')
+STRIPE_PUBLISHABLE_KEY = config('STRIPE_PUBLISHABLE_KEY')
 AUTH_USER_MODEL='register.User'
